@@ -51,7 +51,17 @@ const preloadImages = (slides, callback) => {
     if (slide.img) {
       const img = new Image();
       img.src = slide.img;
-      img.onload = img.onerror = () => {
+
+      img.onload = () => {
+        console.log(`Loaded: ${slide.img}`);
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          callback();
+        }
+      };
+
+      img.onerror = () => {
+        console.error(`Failed to load: ${slide.img}`);
         loadedCount++;
         if (loadedCount === totalImages) {
           callback();
@@ -60,6 +70,16 @@ const preloadImages = (slides, callback) => {
     }
   });
 };
+
+window.onload = () => {
+  preloadImages(slides, () => {
+    console.log("All images loaded.");
+    document.getElementById("loading-screen").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    renderSlide(0);
+  });
+};
+
 
 window.onload = () => {
   preloadImages(slides, () => {
