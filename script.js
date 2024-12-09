@@ -470,7 +470,7 @@ function renderSlide(index) {
     `;
 
   if (index === slides.length - 1) {
-    nextButton.textContent = "Mulai Lagi";
+    nextButton.textContent = "Selesai";
   } else {
     nextButton.textContent = "Lanjut";
   }
