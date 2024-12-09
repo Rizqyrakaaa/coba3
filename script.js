@@ -27,7 +27,7 @@ const slides = [
   { text: "", img: "img/peluk.png" },
   { text: "", img: null },
   { text: "", img: null },
-  { text: "makasih<br>udah baca sampai akhir :)<br>Sekali lagi aku ucapin<br>selamat ulang tahun cintaku❤️<br>maaf yaa kalo dari tadi kata katanya lebay hehe<br><br>dari raka :)", img: null,},
+  { text: "makasih<br>udah baca sampai akhir :)<br><br>Sekali lagi aku ucapin<br>selamat ulang tahun cintaku❤️<br>maaf yaa kalo dari tadi kata katanya lebay hehe<br><br>dari raka :)", img: null,},
 ];
 
 document.getElementById("slide-container").classList.add("slide-in");
